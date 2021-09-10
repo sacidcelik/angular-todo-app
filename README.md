@@ -1,6 +1,12 @@
-# TodosApp
+# Angular Todo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+## Description
+
+This is a basic todo app built in Agular 12.2.3 as part of a "coding challenge" within a few hours. The commit history was unfortunately lost when moving it from one repo to another.
+
+## Install
+
+Make sure to install everything first, e.g. by using npm install.
 
 ## Development server
 
