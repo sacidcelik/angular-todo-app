@@ -1,0 +1,38 @@
+<section class="tasks" data-test-id="tasks-section">
+  <p *ngIf="tasks.length < 1">
+    You are either very lazy or very efficient. Either way, no to-do for you!
+  </p>
+  <app-task
+    *ngFor="let task of tasks; let i = index"
+    [task]="task"
+    (taskClicked)="toggleDone(task)"
+    (deleteConfirmed)="deleteTask(task, i)"
+  >
+  </app-task>
+  <section class="tasks__delete-all">
+    <button
+      *ngIf="tasks.length > 1"
+      class="tasks__delete-all-button delete-button"
+      (click)="onDeleteAll()"
+      data-test-id="delete-all-button"
+    >
+      DELETE ALL
+    </button>
+    <section *ngIf="isDeleteAllWarning" class="tasks__delete-all__box">
+      <p class="task__delete-all__warning">Deleting all tasks. Are you sure?</p>
+      <button
+        (click)="onCancelDeleteAll()"
+        class="tasks__delete-all__cancel delete-cancel-button"
+      >
+        CANCEL
+      </button>
+      <button
+        (click)="onConfirmDeleteAll()"
+        class="tasks__delete-all__confirm delete-button"
+        data-test-id="delete-all-confirm"
+      >
+        CONFIRM
+      </button>
+    </section>
+  </section>
+</section>

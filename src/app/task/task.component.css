@@ -1,0 +1,89 @@
+.task__item {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 33px;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.task__item__checkbox {
+  background-color: #f2f2f2;
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  height: 22px;
+  min-width: 22px;
+}
+
+.task__item__description {
+  max-width: 90%;
+  overflow: hidden;
+}
+
+.task__item__delete-button {
+  background: none;
+  border: none;
+  color: var(--delete-button);
+  visibility: hidden;
+}
+
+.task__item__delete-button:hover,
+.task__item__delete-button:active {
+  color: var(--delete-button-hover);
+}
+
+.task__item:hover .task__item__delete-button,
+.task__item:focus-within .task__item__delete-button,
+.task__item:active .task__item__delete-button,
+.task__item.done .task__item__delete-button {
+  visibility: visible;
+}
+
+.task__item:hover:not(.done) .task__item__checkbox,
+.task__item:focus-within:not(.done) .task__item__checkbox {
+  background: #f9f9f9;
+  border: 2px solid #555555;
+  box-shadow: 0 0 14px #000;
+}
+
+.task__item:active:not(.done) .task__item__description {
+  color: #7ed321;
+}
+
+.task__item.done:active .task__item__description {
+  color: var(--delete-button);
+}
+
+.task__item:hover .task__item__description,
+.task__item__checkbox:focus ~ .task__item__description {
+  font-weight: bold;
+}
+
+.task__item.done .task__item__checkbox {
+  background: 70% no-repeat url("../../assets/check.png") #7ed321;
+}
+
+.task__item.done .task__item__description {
+  color: #ababab;
+  text-decoration: line-through;
+}
+
+.task__item.done:hover .task__item__checkbox,
+.task__item.done .task__item__checkbox:focus {
+  opacity: 0.5;
+}
+
+.task__delete-box {
+  align-items: center;
+  color: var(--delete-button);
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 33px;
+  width: 100%;
+}
+
+.task__delete-box button {
+  max-height: 40px;
+  padding: 0.35rem 0.5rem 0.33rem 0.5rem;
+  min-width: 80px;
+}

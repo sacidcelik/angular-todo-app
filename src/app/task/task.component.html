@@ -1,0 +1,34 @@
+<article class="task" tabindex="-1" data-test-id="task">
+  <section
+    class="task__item {{ task.done ? 'done' : '' }} "
+    (click)="onTaskClicked()"
+  >
+    <button tabindex="0" class="task__item__checkbox"></button>
+    <p class="task__item__description">
+      {{ task.description }}
+    </p>
+    <button
+      class="task__item__delete-button delete-button"
+      (click)="onDeleteClicked(task, $event)"
+      data-test-id="delete-button"
+    >
+      X
+    </button>
+  </section>
+  <section *ngIf="isDeleteWarning" class="task__delete-box">
+    <p class="task__delete-box__text">Deleting incomplete task. Proceed?</p>
+    <button
+      (click)="onCancelDelete()"
+      class="task__delete-box__cancel delete-cancel-button"
+    >
+      CANCEL
+    </button>
+    <button
+      (click)="onDeleteConfirmed()"
+      class="task__delete-box__confirm delete-button"
+      data-test-id="delete-confirm"
+    >
+      CONFIRM
+    </button>
+  </section>
+</article>

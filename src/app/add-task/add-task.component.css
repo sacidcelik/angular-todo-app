@@ -1,0 +1,68 @@
+.add-task {
+  height: 50px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.add-task__form-wrapper {
+  align-items: center;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  height: 44px;
+  justify-content: space-around;
+  width: 300px;
+}
+
+.add-task__form {
+  align-items: center;
+  display: flex;
+  height: 44px;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.add-task__input {
+  border: none;
+  display: inline;
+  height: 42px;
+  width: 90%;
+}
+
+.add-task__form-wrapper:hover,
+.add-task__form-wrapper:hover .add-task__input {
+  background-color: rgba(247, 246, 246, 0.954);
+}
+
+.add-task__input:focus {
+  outline: white;
+}
+
+.add-task__form-wrapper:focus-within {
+  border: 1px solid green;
+}
+
+.add-task__input::placeholder {
+  color: #929292;
+}
+
+.add-task__confirm-button {
+  border: none;
+  background: none;
+}
+
+.add-task__confirm-button:focus {
+  outline-color: green;
+}
+
+.add-task__confirm-button:hover {
+  transform: scale(1.1);
+}
+
+.add-task__error-box {
+  color: var(--delete-button);
+  font-size: 0.8rem;
+  margin: 12px auto;
+  text-align: center;
+  width: 300px;
+}

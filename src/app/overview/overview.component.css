@@ -1,0 +1,30 @@
+.tasks {
+  margin: 0 auto;
+  padding-top: 33px;
+  width: 50%;
+}
+
+.tasks__delete-all-button {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  display: block;
+  padding: 0.5rem 0.8rem 0.53rem 0.8rem;
+  margin: 1rem auto 0 auto;
+  width: 50%;
+}
+
+.tasks__delete-all__box {
+  align-items: center;
+  color: var(--delete-button);
+  display: flex;
+  gap: 1rem;
+  margin-top: 33px;
+  width: 100%;
+}
+
+.tasks__delete-all__box button {
+  max-height: 40px;
+  padding: 0.35rem 0.5rem 0.33rem 0.5rem;
+  min-width: 80px;
+}

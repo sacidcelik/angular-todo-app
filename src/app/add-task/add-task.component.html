@@ -1,0 +1,34 @@
+<section class="add-task">
+  <div class="add-task__form-wrapper">
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)" class="add-task__form">
+      <input
+        name="newTask"
+        ngModel
+        #newTask="ngModel"
+        required
+        minlength="2"
+        type="text"
+        placeholder="Add your task here..."
+        autofocus
+        class="add-task__input"
+        data-test-id="task-input"
+      />
+      <button class="add-task__confirm-button">
+        <img
+          src="../../assets/enter.png"
+          alt="Add Task"
+          width="19"
+          height="18"
+        />
+      </button>
+    </form>
+  </div>
+  <div *ngIf="isError" class="add-task__error-box" data-test-id="error-box">
+    <p *ngIf="newTask.errors?.required" data-test-id="error-required">
+      Error: Please enter a task first
+    </p>
+    <p *ngIf="newTask.errors?.minlength" data-test-id="error-chars">
+      Error: Task must be at least two characters
+    </p>
+  </div>
+</section>

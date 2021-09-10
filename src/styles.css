@@ -1,0 +1,82 @@
+:root {
+  --delete-button: #e74c3c;
+  --delete-button-hover: #c0392b;
+  --border-radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Courier Prime", "serif";
+}
+
+body {
+  color: #444444;
+  line-height: 1.2;
+}
+
+body,
+p {
+  margin: 0;
+}
+
+button {
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: "Roboto", "sans-serif";
+  font-weight: 500;
+  position: relative;
+}
+
+button:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(255, 255, 255, 0.3);
+
+  transform: translate(-50%, -50%);
+}
+
+button:active:before {
+  width: 120%;
+  padding-top: 70%;
+
+  transition: all 0.2s ease-out;
+}
+
+button:focus {
+  outline-color: green;
+}
+
+.delete-button {
+  border: none;
+  background: var(--delete-button);
+  color: white;
+}
+
+.delete-button:hover,
+.delete-button:focus {
+  background: var(--delete-button-hover);
+}
+
+.delete-cancel-button {
+  background: #f9f9f9;
+  border: 1px solid var(--delete-button);
+  color: var(--delete-button);
+}
+
+.delete-cancel-button:hover,
+.delete-cancel-button:focus {
+  border-color: var(--delete-button-hover);
+  color: var(--delete-button-hover);
+}
